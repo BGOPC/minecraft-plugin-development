@@ -12,6 +12,7 @@ public final class Tutorial extends JavaPlugin {
         Bukkit.getLogger().info("Hello World");
         getCommand("fly").setExecutor(new Fly());
         new TorchHandler(this);
+        new PlayerHandler(this);
     }
 
     @Override
