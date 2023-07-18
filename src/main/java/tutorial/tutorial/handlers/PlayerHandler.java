@@ -11,20 +11,33 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import tutorial.tutorial.Tutorial;
 
+import java.util.List;
+
 public class PlayerHandler implements Listener {
-    public PlayerHandler(Tutorial plugin) {
+    private final List<String> itemList;
+
+    public PlayerHandler(Tutorial plugin, List<String> itemList) {
+        this.itemList = itemList;
         Bukkit.getPluginManager().registerEvents(this, plugin);
     }
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
-        ItemStack item = new ItemStack(Material.ENCHANTED_GOLDEN_APPLE, 1);
+
+        if (player.hasPlayedBefore()) {
+            // Player has played before, do nothing
+            return;
+        }
+
         Inventory inventory = player.getInventory();
-        inventory.addItem(item);
-        ItemMeta meta = item.getItemMeta();
-        assert meta != null;
-        meta.setDisplayName("U mama");
-        inventory.setItem(7, item);
+        for (String itemName : itemList) {
+            Material material = Material.getMaterial(itemName);
+
+            if (material != null) {
+                ItemStack item = new ItemStack(material, 1);
+                inventory.addItem(item);
+            }
+        }
     }
 }
