@@ -8,3 +8,8 @@ commands:
     usage: /fly
     aliases: []
     permissions: fly
+  menu:
+    description: Toggles Menu
+    usage: /menu
+    aliases: m
+
