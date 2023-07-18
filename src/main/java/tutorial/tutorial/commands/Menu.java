@@ -31,7 +31,7 @@ public class Menu implements CommandExecutor, Listener {
 
         Player player = (Player) event.getWhoClicked();
         int slot = event.getSlot();
-
+        // DO SOMETHING IF SLOT WAS ...
 
         event.setCancelled(true);
     }
