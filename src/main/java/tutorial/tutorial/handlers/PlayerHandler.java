@@ -40,4 +40,18 @@ public class PlayerHandler implements Listener {
             }
         }
     }
+
+    /*
+    @EventHandler
+    public void onPlayerJoin(PlayerJoinEvent event) {
+        Player player = event.getPlayer();
+        ItemStack item = new ItemStack(Material.ENCHANTED_GOLDEN_APPLE, 1);
+        Inventory inventory = player.getInventory();
+        inventory.addItem(item);
+        ItemMeta meta = item.getItemMeta();
+        assert meta != null;
+        meta.setDisplayName("U mama");
+        inventory.setItem(7, item);
+    }
+     */
 }
