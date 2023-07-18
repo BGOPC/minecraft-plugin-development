@@ -2,3 +2,9 @@ name: tutorial
 version: '${project.version}'
 main: tutorial.tutorial.Tutorial
 api-version: '1.18'
+commands:
+  fly:
+    description: Toggles Flying for sender
+    usage: /fly
+    aliases: []
+    permissions: fly
