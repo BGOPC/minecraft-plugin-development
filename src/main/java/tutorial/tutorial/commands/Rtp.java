@@ -23,5 +23,6 @@ public class Rtp implements CommandExecutor {
                 player.teleport(randomLocation);
             }
         }
+        return true;
     }
 }

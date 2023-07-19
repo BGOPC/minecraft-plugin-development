@@ -52,8 +52,8 @@ public class Menu implements CommandExecutor, Listener {
     private ItemStack getItem(ItemStack item, String name, String... lore) {
         ItemMeta meta = item.getItemMeta();
         assert meta != null;
-        meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', name));
 
+        meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', name));
         List<String> lores = new ArrayList<String>();
         for (String l : lore) {
             lores.add(ChatColor.translateAlternateColorCodes('&', l));
