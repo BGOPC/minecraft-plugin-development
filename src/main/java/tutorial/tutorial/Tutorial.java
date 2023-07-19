@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import tutorial.tutorial.commands.Fly;
 import tutorial.tutorial.commands.Menu;
+import tutorial.tutorial.commands.Rtp;
 import tutorial.tutorial.handlers.*;
 
 import java.util.List;
@@ -20,7 +21,8 @@ public final class Tutorial extends JavaPlugin {
         List<String> starterKit = (List<String>) getConfig().getList("kits");
         // Pass this to Player Join Event, so the player gets this
         Objects.requireNonNull(getCommand("fly")).setExecutor(new Fly());
-        Objects.requireNonNull(getCommand("fly")).setExecutor(new Menu(this));
+        Objects.requireNonNull(getCommand("rtp")).setExecutor(new Rtp());
+        Objects.requireNonNull(getCommand("menu")).setExecutor(new Menu(this));
         new TorchHandler(this);
         new PlayerHandler(this, starterKit);
         new BowHandler(this);

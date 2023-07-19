@@ -12,4 +12,7 @@ commands:
     description: Toggles Menu
     usage: /menu
     aliases: m
-
+  rtp:
+    description: Random Teleport
+    usage: /rtp
+    aliases: []
