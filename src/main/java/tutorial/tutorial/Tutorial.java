@@ -23,6 +23,7 @@ public final class Tutorial extends JavaPlugin {
         Objects.requireNonNull(getCommand("fly")).setExecutor(new Menu(this));
         new TorchHandler(this);
         new PlayerHandler(this, starterKit);
+        new BowHandler(this);
     }
 
     @Override
